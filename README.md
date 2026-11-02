@@ -1,6 +1,6 @@
 # Robotic Bartender
 
-Caltech ME 134 term project, consisting of a custom five-joint HEBI robotic arm with a gripper. Named Chad, this robot was lasercut and built from scratch and uses computer vision to locate bottles, pour them into a glass, shake it, and serve it to the customer.
+The term project for **Caltech ME 134**, consisting of a custom five-joint HEBI robotic arm with a gripper. Named Chad, this robot was built from scratch and uses computer vision to locate bottles, pour into a glass, shake it, and serve it to a customer.
 
 ## Project outline
 
@@ -17,7 +17,7 @@ The arm links were designed in CAD and lasercut from wood. The base U-bracket an
 
 ## Vision and localization
 
-The `chaddetector` node converts RGB camera images to HSV, applies separate blue and purple color masks, and extracts bottle centers from area-filtered contours using image moments. Four ArUco markers (IDs 1–4) define a planar perspective transform between image and world coordinates. If the required markers are missing, the mapping returns no target rather than publishing an uncalibrated position. Detections are published as `geometry_msgs/Point` and `project_msgs/ObjectArray` messages, alongside diagnostic images.
+The alcohol bottles used are plastic and uniform dimensions, and they contain colored beads to model the movement of liquid without actually using liquid. They each have differently colored construction paper taped to the top of the bottle, visible from an overhead camera. The `chaddetector` node converts RGB camera images to HSV and extracts bottle centers from area-filtered contours using image moments. Four ArUco markers (IDs 1–4) define a planar perspective transform between image and world coordinates. Detections are published as `geometry_msgs/Point` and `project_msgs/ObjectArray` messages, alongside diagnostic images.
 
 ## Arm control and manipulation
 
@@ -43,6 +43,10 @@ An earlier controller (`touchtable.py`) also implements **contact-triggered reco
 | `src-tmp/project_msgs/` | Custom object and trajectory message definitions |
 | `src-tmp/chad_interfaces/` | Additional ROS 2 message and service definitions |
 | `src-tmp/usb_cam/` | ROS 2 USB camera driver |
+
+![Example Image](example.png)
+
+![Video of Robotic Bartender]([example.png](https://tinyurl.com/bartenderbotvid))
 
 ## Authors
 
