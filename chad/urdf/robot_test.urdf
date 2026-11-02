@@ -1,0 +1,184 @@
+<?xml version="1.0" ?>
+<robot name="134">
+
+  <!-- ================= -->
+  <!-- Link: base_plate   -->
+  <!-- ================= -->
+  <link name="base_plate">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+
+    <!-- base plate mesh -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/base_plate.stl"/>
+      </geometry>
+      <material name="base_plate_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/base_plate.stl"/>
+      </geometry>
+    </collision>
+
+    <!-- x8 motor on base -->
+    <visual>
+      <origin xyz="0 0 0.0353" rpy="-1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+      <material name="x8_base_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0353" rpy="-1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ============== -->
+  <!-- Link: part_1    -->
+  <!-- ============== -->
+  <link name="part_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1.stl"/>
+      </geometry>
+      <material name="part_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1.stl"/>
+      </geometry>
+    </collision>
+
+    <!-- x8 motor at shoulder -->
+    <visual>
+      <origin xyz="-0.032 0 -0.086" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+      <material name="x8_shoulder_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.032 0 -0.086" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= -->
+  <!-- Link: part_1_2     -->
+  <!-- (upper arm only)  -->
+  <!-- ================= -->
+  <link name="part_1_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+
+    <!-- upper arm mesh -->
+    <visual>
+      <origin xyz="0.0453486 0.0239741 -0.0057" rpy="-1.5708 0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__2.stl"/>
+      </geometry>
+      <material name="upper_arm_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0453486 0.0239741 -0.0057" rpy="-1.5708 0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= -->
+  <!-- Link: forearm      -->
+  <!-- (forearm only)     -->
+  <!-- ================= -->
+  <link name="forearm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+
+    <!-- forearm mesh (at link origin) -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__3.stl"/>
+      </geometry>
+      <material name="forearm_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= -->
+  <!-- Joints             -->
+  <!-- ================= -->
+
+  <!-- Joint: base_plate -> part_1 -->
+  <joint name="base" type="revolute">
+    <origin xyz="0 0 0.05735" rpy="3.14159 0 0"/>
+    <parent link="base_plate"/>
+    <child link="part_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.14159" upper="3.14159"/>
+  </joint>
+
+  <!-- Joint: part_1 -> part_1_2 (shoulder) -->
+  <joint name="shoulder" type="revolute">
+    <origin xyz="-0.00995 0 -0.086" rpy="0 -1.5708 0"/>
+    <parent link="part_1"/>
+    <child link="part_1_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.14159" upper="3.14159"/>
+  </joint>
+
+  <!-- Joint: part_1_2 -> forearm (elbow) -->
+  <joint name="elbow" type="revolute">
+    <!-- This transform is copied from where the forearm mesh USED to sit inside part_1_2 -->
+    <origin xyz="-0.0239341 -0.193475 -0.016" rpy="0 0 -1.83541"/>
+    <parent link="part_1_2"/>
+    <child link="forearm"/>
+    <!-- axis guess; if it bends wrong, change to 1 0 0 or 0 1 0 -->
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.14159" upper="3.14159"/>
+  </joint>
+
+</robot>

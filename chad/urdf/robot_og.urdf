@@ -1,0 +1,144 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/b24f31efa04a014ae2302e9e/w/00cd8abebdb06481d40693f6/e/4cf0829e59723755e3bfcfee -->
+<robot name="134">
+  <!-- Link base_plate -->
+  <link name="base_plate">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part base_plate -->
+    <visual>
+      <origin xyz="-0 -0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/base_plate.stl"/>
+      </geometry>
+      <material name="base_plate_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 -0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/base_plate.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part x8 -->
+    <visual>
+      <origin xyz="0 0 0.0353" rpy="-1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+      <material name="x8_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0353" rpy="-1.5708 -0 1.5708"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link part_1 -->
+  <link name="part_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1 -->
+    <visual>
+      <origin xyz="0 -0 -0.01" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1.stl"/>
+      </geometry>
+      <material name="part_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.01" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part x8_2 -->
+    <visual>
+      <origin xyz="-0.032 0 -0.086" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+      <material name="x8_2_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.032 0 -0.086" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/x8.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link part_1_2 -->
+  <link name="part_1_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part part_1_2 -->
+    <visual>
+      <origin xyz="0.0453486 0.0239741 -0.0057" rpy="-1.5708 -0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_2_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0453486 0.0239741 -0.0057" rpy="-1.5708 -0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_3 -->
+    <visual>
+      <origin xyz="-0.0239341 -0.193475 -0.016" rpy="-0 -0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_3_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0239341 -0.193475 -0.016" rpy="-0 -0 -1.83541"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/part_1__3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from part_1 to part_1_2 -->
+  <joint name="shoulder" type="revolute">
+    <origin xyz="-0.00995 -0 -0.086" rpy="-0 -1.5708 0"/>
+    <parent link="part_1"/>
+    <child link="part_1_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_plate to part_1 -->
+  <joint name="base" type="revolute">
+    <origin xyz="-0 0 0.05735" rpy="3.14159 -0 0"/>
+    <parent link="base_plate"/>
+    <child link="part_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  
+</robot>
+
+

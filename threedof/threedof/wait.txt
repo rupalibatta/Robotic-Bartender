@@ -1,0 +1,102 @@
+[touchtable-4]  [ 0.15365165 -0.19277349  0.        ]
+[touchtable-4]  [ 0.         -0.36250108  0.        ]]
+[touchtable-4] [INFO] [1768948989.679265551] [touchtable]: Jv:
+[touchtable-4] [[-0.32622218 -0.07322892  0.        ]
+[touchtable-4]  [ 0.151688   -0.19934911  0.        ]
+[touchtable-4]  [ 0.         -0.35851966  0.        ]]
+[touchtable-4] [INFO] [1768948989.691422058] [touchtable]: Jv:
+[touchtable-4] [[-0.32278677 -0.07511108  0.        ]
+[touchtable-4]  [ 0.14975093 -0.20560737  0.        ]
+[touchtable-4]  [ 0.         -0.35457415  0.        ]]
+[touchtable-4] [INFO] [1768948989.699375735] [touchtable]: Jv:
+[touchtable-4] [[-0.31939154 -0.076858    0.        ]
+[touchtable-4]  [ 0.14784642 -0.21155624  0.        ]
+[touchtable-4]  [ 0.         -0.35067891  0.        ]]
+[touchtable-4] [INFO] [1768948989.711093334] [touchtable]: Jv:
+[touchtable-4] [[-0.31606493 -0.07846731  0.        ]
+[touchtable-4]  [ 0.14598735 -0.21717792  0.        ]
+[touchtable-4]  [ 0.         -0.34686528  0.        ]]
+[touchtable-4] [INFO] [1768948989.719614251] [touchtable]: Jv:
+[touchtable-4] [[-0.31288506 -0.07991387  0.        ]
+[touchtable-4]  [ 0.14420922 -0.22238059  0.        ]
+[touchtable-4]  [ 0.         -0.34321937  0.        ]]
+[touchtable-4] [INFO] [1768948989.730264341] [touchtable]: Jv:
+[touchtable-4] [[-0.30985661 -0.08121169  0.        ]
+[touchtable-4]  [ 0.14251385 -0.22719169  0.        ]
+[touchtable-4]  [ 0.         -0.33974621  0.        ]]
+[touchtable-4] [INFO] [1768948989.739496723] [touchtable]: Jv:
+[touchtable-4] [[-0.30698024 -0.0823748   0.        ]
+[touchtable-4]  [ 0.14090134 -0.23163993  0.        ]
+[touchtable-4]  [ 0.         -0.33644647  0.        ]]
+[touchtable-4] [INFO] [1768948989.749202801] [touchtable]: Jv:
+[touchtable-4] [[-0.30425693 -0.08341529  0.        ]
+[touchtable-4]  [ 0.13937177 -0.23574953  0.        ]
+[touchtable-4]  [ 0.         -0.33332107  0.        ]]
+[touchtable-4] [INFO] [1768948989.759267625] [touchtable]: Jv:
+[touchtable-4] [[-0.30168522 -0.08434482  0.        ]
+[touchtable-4]  [ 0.13792414 -0.23954463  0.        ]
+[touchtable-4]  [ 0.         -0.33036829  0.        ]]
+[touchtable-4] [INFO] [1768948989.769407132] [touchtable]: Jv:
+[touchtable-4] [[-0.29926337 -0.08517376  0.        ]
+[touchtable-4]  [ 0.13655729 -0.24304669  0.        ]
+[touchtable-4]  [ 0.         -0.32758606  0.        ]]
+[touchtable-4] [INFO] [1768948989.779419247] [touchtable]: Jv:
+[touchtable-4] [[-0.29698812 -0.0859119   0.        ]
+[touchtable-4]  [ 0.13526937 -0.24627652  0.        ]
+[touchtable-4]  [ 0.         -0.32497063  0.        ]]
+[touchtable-4] [INFO] [1768948989.789240306] [touchtable]: Jv:
+[touchtable-4] [[-0.29485525 -0.08656829  0.        ]
+[touchtable-4]  [ 0.13405812 -0.2492538   0.        ]
+[touchtable-4]  [ 0.         -0.32251723  0.        ]]
+[touchtable-4] [INFO] [1768948989.799155251] [touchtable]: Jv:
+[touchtable-4] [[-0.2928606  -0.08715097  0.        ]
+[touchtable-4]  [ 0.13292129 -0.2519961   0.        ]
+[touchtable-4]  [ 0.         -0.32022112  0.        ]]
+[touchtable-4] [INFO] [1768948989.809233787] [touchtable]: Jv:
+[touchtable-4] [[-0.29099903 -0.08766747  0.        ]
+[touchtable-4]  [ 0.13185619 -0.25452044  0.        ]
+[touchtable-4]  [ 0.         -0.31807648  0.        ]]
+[touchtable-4] [INFO] [1768948989.820202710] [touchtable]: Jv:
+[touchtable-4] [[-0.28926538 -0.08812453  0.        ]
+[touchtable-4]  [ 0.13086013 -0.25684229  0.        ]
+[touchtable-4]  [ 0.         -0.31607751  0.        ]]
+[touchtable-4] [INFO] [1768948989.829386563] [touchtable]: Jv:
+[touchtable-4] [[-0.28765433 -0.08852826  0.        ]
+[touchtable-4]  [ 0.12993038 -0.25897598  0.        ]
+[touchtable-4]  [ 0.         -0.3142182   0.        ]]
+[touchtable-4] [INFO] [1768948989.839411925] [touchtable]: Jv:
+[touchtable-4] [[-0.28616002 -0.08888435  0.        ]
+[touchtable-4]  [ 0.12906393 -0.26093533  0.        ]
+[touchtable-4]  [ 0.         -0.31249194  0.        ]]
+[touchtable-4] [INFO] [1768948989.849413870] [touchtable]: Jv:
+[touchtable-4] [[-0.28477709 -0.08919775  0.        ]
+[touchtable-4]  [ 0.12825805 -0.26273251  0.        ]
+[touchtable-4]  [ 0.         -0.31089271  0.        ]]
+[touchtable-4] [INFO] [1768948989.862913012] [touchtable]: Jv:
+[touchtable-4] [[-0.28349977 -0.08947309  0.        ]
+[touchtable-4]  [ 0.12750982 -0.26437932  0.        ]
+[touchtable-4]  [ 0.         -0.30941402  0.        ]]
+[touchtable-4] [INFO] [1768948989.869442636] [touchtable]: Jv:
+[touchtable-4] [[-0.28233343 -0.08971136  0.        ]
+[touchtable-4]  [ 0.12682151 -0.26587355  0.        ]
+[touchtable-4]  [ 0.         -0.30806171  0.        ]]
+[touchtable-4] [INFO] [1768948989.879284664] [touchtable]: Jv:
+[touchtable-4] [[-0.28125027 -0.08992275  0.        ]
+[touchtable-4]  [ 0.12618001 -0.2672518   0.        ]
+[touchtable-4]  [ 0.         -0.30680493  0.        ]]
+[touchtable-4] [INFO] [1768948989.889306965] [touchtable]: Jv:
+[touchtable-4] [[-0.28025546 -0.0901075   0.        ]
+[touchtable-4]  [ 0.12558752 -0.26851075  0.        ]
+[touchtable-4]  [ 0.         -0.30564932  0.        ]]
+[touchtable-4] [INFO] [1768948989.900481287] [touchtable]: Jv:
+[touchtable-4] [[-0.27934455 -0.09026844  0.        ]
+[touchtable-4]  [ 0.12504178 -0.26965815  0.        ]
+[touchtable-4]  [ 0.         -0.30458985  0.        ]]
+[touchtable-4] [INFO] [1768948989.909055596] [touchtable]: Jv:
+[touchtable-4] [[-0.27851226 -0.09040836  0.        ]
+[touchtable-4]  [ 0.12454018 -0.27070228  0.        ]
+[touchtable-4]  [ 0.         -0.30362064  0.        ]]
+[touchtable-4] [INFO] [1768948989.919320395] [touchtable]: Jv:
+[touchtable-4] [[-0.2777536  -0.09052975  0.        ]
+[touchtable-4]  [ 0.12408022 -0.27165076  0.        ]
+[touchtable-4]  [ 0.         -0.30273605  0.        ]]

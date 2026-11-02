@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+<robot name="134">
+
+  <!-- ******************************************************** -->
+  <!-- ******************* Kinematic Chain ******************** -->
+  <!-- ******************************************************** -->
+  <!-- Note the 'origin' tag in the joints defines the shift and
+       reorientation, i.e. the transform.  For moving joints, this
+       happens before the continuous joint rotates around 'axis'. -->
+
+  <!-- World can't take a visual element (at least in Gazebo). -->
+  <link name="world"/>
+
+  <!-- Shift 0 -->
+  <joint name="placement" type="fixed">
+    <parent link="world"/>
+    <child  link="baseplate"/>
+    <origin xyz="0.046 0.682 0.00615" rpy="0 0 1.5708"/>			<!-- WHERE IS THE BASE -->
+  </joint>
+
+  <!-- BASE PLATE: Shift across the base plate to the base motor. --> 
+  <link name="baseplate">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.2 0.1 0.0123"/>
+      </geometry>
+      <material name="wood"/>
+    </visual>
+  </link>
+
+  <!-- Joint 1 -->
+  <joint name="baseplate" type="fixed">
+    <parent link="baseplate"/>
+    <child  link="basemotor"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- BASE MOTOR: Thickness: X5 = 31.1mm, X8 = 45.1mm -->
+  <link name="basemotor">
+    <visual>
+      <origin xyz="0.0 0.0 0.00615" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://threedof/meshes/X8.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hebi"/>
+    </visual>
+  </link>
+
+  <joint name="base" type="continuous">
+    <parent link="basemotor"/>
+    <child  link="ubracket"/>
+    <origin xyz="0 0 0.06625" rpy="0 0 0"/> 
+    <axis   xyz="0 0 1"/>
+  </joint>
+
+  <!-- U BRACKET: Shift and rotate across the L bracket. -0.0405 -0.05 0.0501-->
+  <link name="ubracket">
+    <visual>
+      <origin xyz="0 0 0" rpy="-3.1416 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/u-bracket-stronger.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="wood"/>
+    </visual>
+  </link>
+
+  <joint name="ubracket" type="fixed">
+    <parent link="ubracket"/>
+    <child  link="shouldermotor"/>
+    <origin xyz="0.045 0 0.084" rpy="1.5708 -1.5708 1.5708"/>	  <!-- L BRACKET DIMENIONS 0.05 -0.01 0.1035 WRONG TRANWLRTE HERE-->
+  </joint>
+
+  <!-- SHOULDER MOTOR: Thickness: X5 = 31.1mm, X8 = 45.1mm -->
+  <link name="shouldermotor">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 3.1416 3.1416"/>
+      <geometry>
+        <mesh filename="package://threedof/meshes/X8.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hebi"/>
+    </visual>
+  </link>
+
+  <joint name="shoulder" type="continuous">
+    <parent link="shouldermotor"/>
+    <child  link="upperarm"/>
+    <origin xyz="0 0 -0.0765" rpy="-3.1416 0 0"/> <!-- 0.0 -0.0368 0 -->
+    <axis   xyz="0 0 1"/>
+  </joint>
+
+  <!-- UPPER ARM: Shift across the upper arm (1/4in thickness) -->
+  <link name="upperarm">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/arm_box_smoothbrain(1).stl"
+	      scale="0.001 0.001 0.001"/>	      
+      </geometry>
+      <material name="wood"/>
+    </visual>
+    <!-- Add a visual element -->
+  </link>
+
+  <joint name="upperarm" type="fixed">
+    <parent link="upperarm"/>
+    <child  link="elbowmotor"/>
+    <origin xyz="0.382 0 0" rpy="0 0 -1.5708"/>		  <!-- UPPER ARM DIMENIONS -->
+  </joint>
+
+  <!-- Elbow motor.  Thickness: X5 = 31.1mm, X8 = 45.1mm -->
+  <link name="elbowmotor">
+    <visual>
+      <geometry>
+        <mesh filename="package://threedof/meshes/X5.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hebi"/>
+    </visual>
+  </link>
+
+  <joint name="elbow" type="continuous">
+    <parent link="elbowmotor"/>
+    <child  link="lowerarm"/>
+    <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+    <axis   xyz="0 0 1"/>
+  </joint>
+
+  <!-- Shift across the upper arm (1/4in thickness) -->
+  <link name="lowerarm">
+    <visual>
+      <origin xyz="0 0 0.03125" rpy="0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/arm_box_smoothbrain2.stl"
+	      scale="1 1 1"/>	
+      </geometry>
+      <material name="wood"/>
+    </visual>
+  </link>
+
+  <joint name="lowerarm" type="fixed">
+    <parent link="lowerarm"/>
+    <child  link="wristmotor1"/>
+    <origin xyz="0.336 0.0 0.0314" rpy="3.1416 0 -1.5708"/>		  <!-- UPPER ARM DIMENIONS 0.0420 0.0367-->
+  </joint>
+
+  <!-- X5 for the wrist 1 -->
+  <link name="wristmotor1">
+    <visual>
+      <geometry>
+        <mesh filename="package://threedof/meshes/X5.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hebi"/>
+    </visual>
+  </link>
+
+  <joint name="wrist1" type="continuous">
+    <parent link="wristmotor1"/>
+    <child  link="lbracket"/>
+    <origin xyz="0 0 0.0311" rpy="-3.1416 0 3.1416"/>
+    <axis   xyz="0 0 -1"/>
+  </joint>
+
+  <!-- L BRACKET: Shift and rotate across the L bracket. -0.0405 -0.05 0.0501-->
+  <link name="lbracket">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/l-bracket(2).stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="wood"/>
+    </visual>
+  </link>
+
+  <joint name="lbracket" type="fixed">
+    <parent link="lbracket"/>
+    <child  link="wristmotor2"/>
+    <origin xyz="0 -0.0481 -0.0425" rpy="1.5708 -1.5708 0"/>	  <!-- L BRACKET DIMENIONS 0.05 -0.01 0.1035 WRONG TRANWLRTE HERE-->
+  </joint>  
+
+    <!-- X5 for the wrist 2-->
+  <link name="wristmotor2">
+    <visual>
+      <geometry>
+        <mesh filename="package://threedof/meshes/X5.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="hebi"/>
+    </visual>
+  </link>
+
+  <joint name="wrist2" type="continuous">
+    <parent link="wristmotor2"/>
+    <child  link="stick"/>
+    <origin xyz="0 0 0.0311" rpy="-1.5708 0 0"/>
+    <axis   xyz="0 1 0"/>
+  </joint>
+
+  <!-- stick-->
+  <link name="stick">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://chad/meshes/stick.stl"
+	      scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="wood"/>
+    </visual>
+  </link>
+
+  <joint name="gripper" type="fixed">
+    <parent link="stick"/>
+    <child  link="tip"/>
+    <origin xyz="0 -0.04 0" rpy="0 0 0"/> <!-- used to be -0.09-->
+    <axis   xyz="0 0 1"/>
+  </joint>
+
+  <!-- TIP FRAME -->
+  <link name="tip"/>
+
+  
+  <!-- *************************************************** -->
+  <!-- *************** Visual Link Elements ************** -->
+  <!-- *************************************************** -->
+  <!-- Note collada .dae files are preferred over .stl as  -->
+  <!-- they specify and provide color/texture support.     -->
+
+  <!-- Colors -->
+  <material name="wood">  <color rgba="0.82 0.62 0.04 1"/>  </material>
+  <material name="hebi">  <color rgba="0.82 0.06 0.06 1"/>  </material>
+
+</robot>

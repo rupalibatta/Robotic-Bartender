@@ -1,0 +1,11 @@
+digraph G {
+node [shape=box];
+"base_plate" [label="base_plate"];
+"part_1" [label="part_1"];
+"part_1_2" [label="part_1_2"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_plate" -> "base" [label="xyz: -0 0 0.05735 \nrpy: 3.14159 -0 0"]
+"base" -> "part_1"
+"part_1" -> "shoulder" [label="xyz: -0.00995 -0 -0.086 \nrpy: 0 -1.5708 0"]
+"shoulder" -> "part_1_2"
+}

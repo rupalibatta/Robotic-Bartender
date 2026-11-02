@@ -1,0 +1,91 @@
+ixdof]: KinematicChain: Step #6 REVOLUTE DOF #2 'elbow'
+[sixdof-4] [INFO] [1772519490.797162226] [sixdof]: KinematicChain: Step #7 FIXED           'lowerarm'
+[sixdof-4] [INFO] [1772519490.797683511] [sixdof]: KinematicChain: Step #8 REVOLUTE DOF #3 'wrist1'
+[sixdof-4] [INFO] [1772519490.798441735] [sixdof]: KinematicChain: Step #9 FIXED           'lbracket'
+[sixdof-4] [INFO] [1772519490.798995592] [sixdof]: KinematicChain: Step #10 REVOLUTE DOF #4 'wrist2'
+[sixdof-4] [INFO] [1772519490.800769434] [sixdof]: KinematicChain: Step #11 FIXED           'gripper'
+[sixdof-4] [INFO] [1772519490.811180309] [sixdof]: Waiting for a /joint_commands subscriber...
+[sixdof-4] [INFO] [1772519490.812316115] [sixdof]: Sending commands with dt of 0.010000 seconds (100.000000Hz)
+[sixdof-4] [INFO] [1772519490.888224608] [sixdof]: Received bottle at (0.290, 1.221)
+[sixdof-4] [INFO] [1772519490.896862325] [sixdof]: Going to bottle at point: [0.28963059 1.22134686 0.03      ]
+[sixdof-4] [INFO] [1772519496.905141708] [sixdof]: At bottle, closing gripper
+[sixdof-4] [INFO] [1772519497.312857911] [sixdof]: Returning to waiting pose
+[sixdof-4] [INFO] [1772519503.312733479] [sixdof]: In waiting pose.
+[sixdof-4] [INFO] [1772519503.385750910] [sixdof]: Received bottle at (0.290, 1.222)
+[sixdof-4] [INFO] [1772519503.395776126] [sixdof]: At bottle, closing gripper
+[sixdof-4] [INFO] [1772519503.802747737] [sixdof]: Returning to waiting pose
+[sixdof-4] [INFO] [1772519509.812478209] [sixdof]: In waiting pose.
+[sixdof-4] [INFO] [1772519509.869705518] [sixdof]: Received bottle at (0.179, 0.468)
+[sixdof-4] [INFO] [1772519509.879514155] [sixdof]: At bottle, closing gripper
+[sixdof-4] [INFO] [1772519510.282800603] [sixdof]: Returning to waiting pose
+[sixdof-4] [INFO] [1772519516.282419960] [sixdof]: In waiting pose.
+[INFO] [rviz2-1]: process has finished cleanly [pid 109898]
+[INFO] [launch]: process[rviz2-1] was required: shutting down launched system
+[INFO] [sixdof-4]: sending signal 'SIGINT' to process[sixdof-4]
+[INFO] [hebinode-3]: sending signal 'SIGINT' to process[hebinode-3]
+[INFO] [robot_state_publisher-2]: sending signal 'SIGINT' to process[robot_state_publisher-2]
+[sixdof-4] Traceback (most recent call last):
+[sixdof-4]   File "/home/robot/robotws/install/chad/lib/chad/sixdof", line 33, in <module>
+[sixdof-4]     sys.exit(load_entry_point('chad==0.0.0', 'console_scripts', 'sixdof')())
+[sixdof-4]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[sixdof-4]   File "/home/robot/robotws/install/chad/lib/python3.12/site-packages/chad/sixdof.py", line 611, in main
+[sixdof-4]     rclpy.spin_until_future_complete(node, future)
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 274, in spin_until_future_complete
+[sixdof-4]     executor.spin_until_future_complete(future, timeout_sec)
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 330, in spin_until_future_complete
+[sixdof-4]     self.spin_once_until_future_complete(future, timeout_sec)
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 853, in spin_once_until_future_complete
+[sixdof-4]     self._spin_once_impl(timeout_sec, future.done)
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 829, in _spin_once_impl
+[sixdof-4]     handler, entity, node = self.wait_for_ready_callbacks(
+[sixdof-4]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 799, in wait_for_ready_callbacks
+[sixdof-4]     return next(self._cb_iter)
+[sixdof-4]            ^^^^^^^^^^^^^^^^^^^
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 612, in _wait_for_ready_callbacks
+[sixdof-4]     waitables.extend(filter(self.can_execute, node.waitables))
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 550, in can_execute
+[sixdof-4]     return not entity._executor_event and entity.callback_group.can_execute(entity)
+[sixdof-4]                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[sixdof-4]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/callback_groups.py", line 103, in can_execute
+[sixdof-4]     assert weakref.ref(entity) in self.entities
+[sixdof-4]            ^^^^^^^^^^^^^^^^^^^
+[sixdof-4] KeyboardInterrupt
+[robot_state_publisher-2] [INFO] [1772519520.163641410] [rclcpp]: signal_handler(signum=2)
+[hebinode-3] Traceback (most recent call last):
+[hebinode-3]   File "/home/robot/robotws/install/hebiros/lib/python3.12/site-packages/hebiros/hebinode.py", line 376, in main
+[hebinode-3]     rclpy.spin(node)
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+[hebinode-3]     executor.spin_once()
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 845, in spin_once
+[hebinode-3]     self._spin_once_impl(timeout_sec)
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 829, in _spin_once_impl
+[hebinode-3]     handler, entity, node = self.wait_for_ready_callbacks(
+[hebinode-3]                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 799, in wait_for_ready_callbacks
+[hebinode-3]     return next(self._cb_iter)
+[hebinode-3]            ^^^^^^^^^^^^^^^^^^^
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 672, in _wait_for_ready_callbacks
+[hebinode-3]     context_stack.enter_context(waitable)
+[hebinode-3]   File "/usr/lib/python3.12/contextlib.py", line 527, in enter_context
+[hebinode-3]     self._push_cm_exit(cm, _exit)
+[hebinode-3]   File "/usr/lib/python3.12/contextlib.py", line 545, in _push_cm_exit
+[hebinode-3]     _exit_wrapper = self._create_exit_wrapper(cm, cm_exit)
+[hebinode-3]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[hebinode-3]   File "/usr/lib/python3.12/contextlib.py", line 473, in _create_exit_wrapper
+[hebinode-3]     return MethodType(cm_exit, cm)
+[hebinode-3]            ^^^^^^^^^^^^^^^^^^^^^^^
+[hebinode-3] KeyboardInterrupt
+[hebinode-3] matplotlib not found - hebi.util.plot_logs and hebi.util.plot_trajectory will not work.
+[hebinode-3] pynput not found - HebiKeyboard will not work
+[hebinode-3] Ending due to exception: KeyboardInterrupt()
+[hebinode-3] Traceback (most recent call last):
+[hebinode-3]   File "/home/robot/robotws/install/hebiros/lib/hebiros/hebinode", line 33, in <module>
+[hebinode-3]     sys.exit(load_entry_point('hebiros==0.0.0', 'console_scripts', 'hebinode')())
+[hebinode-3]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[hebinode-3]   File "/home/robot/robotws/install/hebiros/lib/python3.12/site-packages/hebiros/hebinode.py", line 383, in main
+[hebinode-3]     rclpy.shutdown()
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[hebinode-3]     _shutdown(context=context)
+[hebinode-3]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[hebinode-3]     context.shutdown()
