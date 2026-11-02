@@ -44,9 +44,7 @@ An earlier controller (`touchtable.py`) also implements **contact-triggered reco
 | `src-tmp/chad_interfaces/` | Additional ROS 2 message and service definitions |
 | `src-tmp/usb_cam/` | ROS 2 USB camera driver |
 
-![Example Image](example.png)
-
-![Video of Robotic Bartender]([example.png](https://tinyurl.com/bartenderbotvid))
+**[Final demonstration video](https://tinyurl.com/bartenderbotvid)**
 
 ## Authors
 
